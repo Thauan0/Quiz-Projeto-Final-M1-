@@ -7,13 +7,14 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1d2671, #c33764);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo da tela igual ao box de perguntas */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     color: white;
 }
+
 
 /* Organiza os itens em colunas, centralizados */
 .quiz-container {
