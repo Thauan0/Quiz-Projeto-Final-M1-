@@ -1,172 +1,23 @@
-const questions = [
-    {
-        question: "Em que ano estreou 'Breaking Bad'?",
-        answers: [
-            { text: '2008', correct: true },
-            { text: '2010', correct: false },
-            { text: '2006', correct: false },
-            { text: '2009', correct: false }
-        ]
-    },
-    {
-        question: "Quem interpretou Jon Snow em 'Game of Thrones'?",
-        answers: [
-            { text: 'Kit Harington', correct: true },
-            { text: 'Peter Dinklage', correct: false },
-            { text: 'Emilia Clarke', correct: false },
-            { text: 'Nikolaj Coster-Waldau', correct: false }
-        ]
-    },
-    {
-        question: "Qual é o nome do café em 'Friends'?",
-        answers: [
-            { text: 'Central Park', correct: false },
-            { text: 'Central Perk', correct: true },
-            { text: 'Coffee House', correct: false },
-            { text: 'The Perk', correct: false }
-        ]
-    },
-    {
-        question: "Qual é a especialidade médica do Dr. Gregory House?",
-        answers: [
-            { text: "Cardiologia", correct: false },
-            { text: "Neurologia", correct: false },
-            { text: "Infectologia", correct: false },
-            { text: "Diagnóstico", correct: true }
-        ]
-    },
-    {
-        question: "No filme 'Efeito Borboleta', qual é a habilidade especial do personagem principal, Evan?",
-        answers: [
-            { text: "Ele pode ler mentes.", correct: false },
-            { text: "Ele pode viajar no tempo através de suas memórias.", correct: true },
-            { text: "Ele tem super força.", correct: false },
-            { text: "Ele pode prever o futuro.", correct: false }
-        ]
-    },
-    {
-        question: "No Brooklyn 99, qual é o apelido do bandido que sempre escapa de Jake?",
-        answers: [
-            { text: "Pontiac Bandit", correct: true },
-            { text: "Ford Fraudster", correct: false },
-            { text: "Camaro Criminal", correct: false },
-            { text: "Mustang Thief", correct: false }
-        ]
-    },
-    {
-        question: "Qual é o nome da montaria do Príncipe Daemon Targaryen, conhecido por ser um dos dragões mais temidos de Westeros?",
-        answers: [
-            { text: "Caraxes", correct: true },
-            { text: "Vhagar", correct: false },
-            { text: "Balerion", correct: false },
-            { text: "Syrax", correct: false }
-        ]
-    },
-    {
-        question: "Quantos ex-namorados Ramona Flowers tem, que Scott precisa enfrentar?",
-        answers: [
-            { text: "5", correct: false },
-            { text: "7", correct: true },
-            { text: "6", correct: false },
-            { text: "8", correct: false }
-        ]
-    }
-];
+
 
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
 const resultElement = document.getElementById('result');
 const backgroundElement = document.querySelector('.background');
+const imagens = [  
+        "url('./img/Princess.jfif')",    
+        "url('./img/HOUSE.jpg')", 
+]
 
-let currentQuestionIndex = 0;
-let score = 0;
-
-function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Próxima";
-    nextButton.removeEventListener('click', startQuiz); // Remove o ouvinte 'Reiniciar' para evitar múltiplos ouvintes
-    nextButton.addEventListener('click', handleNextButtonClick); // Reanexar ouvinte para 'Próxima'
-    showQuestion();
-    startBackgroundRotation();
+let indiceatual = 0;
+function trocadetela(){
+        indiceatual = (indiceatual+1) % imagens.length;
+        document.body.style.backgroundImage = imagens[indiceatual];
+        
 }
 
-function showQuestion() {
-    resetState();
-    const currentQuestion = questions[currentQuestionIndex];
-    questionElement.innerText = currentQuestion.question;
+setInterval (trocadetela, 3000);
 
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        button.addEventListener('click', () => selectAnswer(answer));
-        answerButtonsElement.appendChild(button);
-    });
-}
 
-function resetState() {
-    nextButton.style.display = 'none';
-    resultElement.innerHTML = '';
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
-}
 
-function selectAnswer(answer) {
-    if (answer.correct) {
-        score++;
-        resultElement.innerHTML = "Correto!";
-    } else {
-        resultElement.innerHTML = "Errado!";
-    }
-
-    resultElement.classList.add('show');
-    nextButton.style.display = 'block';
-}
-
-function handleNextButtonClick() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showResult();
-    }
-}
-
-function showResult() {
-    resetState();
-    questionElement.innerText = `Você acertou ${score} de ${questions.length}!`;
-    nextButton.innerHTML = "Reiniciar";
-    nextButton.style.display = 'block';
-    
-    // Remover o ouvinte anterior para evitar múltiplos eventos
-    nextButton.removeEventListener('click', handleNextButtonClick); 
-    nextButton.addEventListener('click', startQuiz); // Adicionar o ouvinte de reiniciar
-}
-
-function startBackgroundRotation() {
-    const images = [
-        './img/House',
-        './img/HOUSE2.jpg',
-        './img/HOUSE3.jpg',
-        './img/HOUSE4.jpg',
-        './img/HOUSE5.jpg'
-    ];
-
-    let currentIndex = 0;
-    const interval = 5000; // Tempo em milissegundos (5 segundos)
-
-    function changeBackgroundImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        backgroundElement.style.backgroundImage = `url(${images[currentIndex]})`;
-    }
-
-    // Inicializa com a primeira imagem
-    changeBackgroundImage();
-    // Troca a imagem a cada 5 segundos
-    setInterval(changeBackgroundImage, interval);
-}
-
-startQuiz();
