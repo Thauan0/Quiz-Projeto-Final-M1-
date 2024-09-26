@@ -113,6 +113,11 @@ function resetState() {
 }
 
 function selectAnswer(answer) {
+    // Desabilita todos os botões de resposta
+    Array.from(answerButtonsElement.children).forEach(button => {
+        button.disabled = true;
+    });
+
     if (answer.correct) {
         score++;
         resultElement.innerHTML = "Correto!";
