@@ -1,0 +1,110 @@
+   body{
+    background-color:#141414; /* Fundo da tela igual ao box de perguntas */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+
+   }
+   
+   
+h2{
+    color: white;
+    font-size: 50px;
+    text-align: center
+
+   }
+   
+   
+ .sobre1{
+    display:flex;
+
+    }
+    
+.sobre1 .img-sobre1{
+    padding-left: 90px;
+    padding-top: 15px;
+    position: relative;
+    right: 30px;
+    
+}
+.sobre1 .txt-sobre1{
+    color: rgb(255, 255, 255); 
+    right: 800px;
+
+}
+
+.sobre2{
+    display:flex;
+
+    }
+    
+.sobre2 .img-sobre2{
+    padding-left: 90px;
+    padding-top: 15px;
+    position: relative;
+    right: 30px;
+    
+}
+.sobre2 .txt-sobre2{
+    color: rgb(255, 255, 255); 
+    right: 800px;
+
+}
+
+.sobre3{
+    display:flex;
+
+    }
+    
+.sobre3 .img-sobre3{
+    padding-left: 90px;
+    padding-top: 15px;
+    position: relative;
+    right: 30px;
+    
+}
+.sobre3 .txt-sobre3{
+    color: rgb(255, 255, 255); 
+    right: 800px;
+
+}
+
+.sobre4{
+    display:flex;
+
+    }
+    
+.sobre4 .img-sobre4{
+    padding-left: 90px;
+    padding-top: 15px;
+    position: relative;
+    right: 30px;
+    
+}
+.sobre4 .txt-sobre4{
+    color: rgb(255, 255, 255); 
+    right: 800px;
+
+}
+
+.sobre5{
+    display:flex;
+
+    }
+    
+.sobre5 .img-sobre5{
+    padding-left: 90px;
+    padding-top: 15px;
+    position: relative;
+    right: 30px;
+    
+}
+.sobre5 .txt-sobre5{
+    color: rgb(255, 255, 255); 
+    right: 800px;
+
+}
+
+
+
+
+
