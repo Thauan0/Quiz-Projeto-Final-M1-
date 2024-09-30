@@ -85,8 +85,8 @@ function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Próxima";
-    nextButton.removeEventListener('click', startQuiz); // Remove o ouvinte 'Reiniciar' para evitar múltiplos ouvintes
-    nextButton.addEventListener('click', handleNextButtonClick); // Reanexar ouvinte para 'Próxima'
+    nextButton.removeEventListener('click', startQuiz);
+    nextButton.addEventListener('click', handleNextButtonClick);
     showQuestion();
 }
 
@@ -107,17 +107,15 @@ function showQuestion() {
 function resetState() {
     nextButton.style.display = 'none';
     resultElement.innerHTML = '';
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
+    answerButtonsElement.innerHTML = ''; // Limpa os botões de resposta
 }
 
 function selectAnswer(answer) {
-    // Desabilita todos os botões de resposta
     Array.from(answerButtonsElement.children).forEach(button => {
-        button.disabled = true;
+        button.disabled = true; // Desabilita todos os botões de resposta
     });
 
+    // Mostra se a resposta está correta ou errada
     if (answer.correct) {
         score++;
         resultElement.innerHTML = "Correto!";
@@ -126,7 +124,7 @@ function selectAnswer(answer) {
     }
 
     resultElement.classList.add('show');
-    nextButton.style.display = 'block';
+    nextButton.style.display = 'block'; // Mostra o botão "Próxima"
 }
 
 function handleNextButtonClick() {
@@ -141,15 +139,49 @@ function handleNextButtonClick() {
 function showResult() {
     resetState();
     questionElement.innerText = `Você acertou ${score} de ${questions.length}!`;
+
     nextButton.innerHTML = "Reiniciar";
     nextButton.style.display = 'block';
-    
-    // Remover o ouvinte anterior para evitar múltiplos eventos
-    nextButton.removeEventListener('click', handleNextButtonClick); 
-    nextButton.addEventListener('click', startQuiz); // Adicionar o ouvinte de reiniciar
+
+    const playerName = localStorage.getItem('playerName') || 'Jogador Desconhecido';
+
+    // Salvar o nome, pontuação e data no localStorage
+    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    const currentDate = new Date().toLocaleDateString();
+    highScores.push({ name: playerName, score: score, date: currentDate });
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+
+    nextButton.removeEventListener('click', handleNextButtonClick);
+    nextButton.addEventListener('click', () => {
+        window.location.href = 'index.html'; // Voltar para a tela inicial
+    });
 }
 
-nextButton.addEventListener('click', handleNextButtonClick);
+// Função para carregar as pontuações do localStorage e exibir apenas as pontuações do dia atual
+function loadHighScores() {
+    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    const scoreListElement = document.getElementById('score-list');
 
+    // Limpa a lista antes de popular novamente
+    scoreListElement.innerHTML = '';
+
+    const today = new Date().toLocaleDateString();
+    const todayScores = highScores.filter(scoreEntry => scoreEntry.date === today);
+
+    if (todayScores.length === 0) {
+        scoreListElement.innerHTML = '<li class="score-item">Nenhuma pontuação registrada hoje.</li>';
+    } else {
+        todayScores.forEach((scoreEntry, index) => {
+            const li = document.createElement('li');
+            li.classList.add('score-item');
+            li.innerText = `${index + 1}. ${scoreEntry.name}: ${scoreEntry.score} pontos`;
+            scoreListElement.appendChild(li);
+        });
+    }
+}
+
+// Carregar as pontuações quando a página for carregada
+window.onload = loadHighScores;
+
+// Inicializa o quiz
 startQuiz();
-

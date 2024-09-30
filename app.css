@@ -8,6 +8,115 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+}
+/* Modal que aparece como uma pequena janela */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Tamanho menor */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Garantir que ele esteja acima de outros elementos */
+    display: none; /* Inicialmente escondido */
+    text-align: center;
+}
+
+/* Modal que aparece como uma pequena janela */
+.modal {
+    position: fixed;
+    top: 40%; /* Centraliza verticalmente */
+    left: 60%; /* Muda para mais à direita */
+    transform: translate(-50%, -50%);
+    width: 300px; /* Tamanho menor */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semitransparente */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Garantir que ele esteja acima de outros elementos */
+    display: none; /* Inicialmente escondido */
+    text-align: center;
+    border: 2px solid #e50914; /* Borda vermelha estilo Netflix */
+}
+
+/* Modal que aparece flutuando à direita */
+.modal {
+    position: fixed;
+    top: 50%; /* Centraliza verticalmente */
+    right: 0; /* Alinha totalmente à direita */
+    transform: translateY(-50%); /* Ajusta verticalmente o centro */
+    width: 300px; /* Tamanho menor */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semitransparente */
+    border-radius: 10px 0 0 10px; /* Arredondar apenas o lado esquerdo */
+    padding: 20px;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3); /* Sombra apenas no lado esquerdo */
+    z-index: 100; /* Garantir que ele esteja acima de outros elementos */
+    display: none; /* Inicialmente escondido */
+    text-align: center;
+    border: 2px solid #e50914; /* Borda vermelha estilo Netflix */
+    border-right: none; /* Remove a borda do lado direito */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    margin: 0;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff; /* Texto branco */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente no input */
+    color: #fff; /* Texto branco */
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #e50914; /* Cor vermelha padrão */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #d40813; /* Efeito de hover mais claro */
+}
+
+/* Animação suave de entrada */
+.modal {
+    animation: slideInFromRight 0.5s ease-in-out;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .background, .parallax {

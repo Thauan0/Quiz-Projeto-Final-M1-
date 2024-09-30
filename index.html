@@ -8,25 +8,27 @@
 </head>
 <body>
 
-    
-    <div class="parallax" style="background-image: url('./img/HOUSE.jpg');"></div>
-    <div class="parallax" style="background-image: url('./img/Princess.jfif');"></div>
-
     <div class="overlay"></div>
     <div class="container">
         <h1>PrimeQuiz</h1>
         <div class="menu-container">
             <a href="game.html" class="menu-item" id="play-game">Jogar</a>
-            <div class="menu-item">Pontuação Máxima</div>
-            <a href="sobre.html" class="menu-item" id="play-game">Sobre</a>
+            <a href="sobre.html" class="menu-item" id="about-game">Sobre</a>
         </div>
-        
-        
     </div>
+
+    <!-- Modal de nome estilizado -->
+    <div id="name-modal" class="modal">
+        <div class="modal-content">
+            <h2>Insira seu nome</h2>
+            <input type="text" id="player-name" placeholder="Digite seu nome" required/>
+            <button id="start-game">Começar Jogo</button>
+        </div>
+    </div>
+
     <footer>
         Quiz por Squad 2 - T06 / Tarde
     </footer>
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
