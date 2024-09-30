@@ -1,5 +1,5 @@
 :root {
-    background-color: #141414; /* Mudança para um fundo mais escuro, estilo streaming */
+    background-color: #141414; 
     font-size: 62.5%;
 }
 
@@ -13,58 +13,58 @@ body {
         background-position: center;
 
 }
-/* Modal que aparece como uma pequena janela */
+
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px; /* Tamanho menor */
+    width: 300px; 
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Garantir que ele esteja acima de outros elementos */
-    display: none; /* Inicialmente escondido */
+    z-index: 100; 
+    display: none; 
     text-align: center;
 }
 
-/* Modal que aparece como uma pequena janela */
+
 .modal {
     position: fixed;
-    top: 40%; /* Centraliza verticalmente */
-    left: 60%; /* Muda para mais à direita */
+    top: 40%; 
+    left: 60%; 
     transform: translate(-50%, -50%);
-    width: 300px; /* Tamanho menor */
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semitransparente */
+    width: 300px; 
+    background-color: rgba(0, 0, 0, 0.8); 
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Garantir que ele esteja acima de outros elementos */
-    display: none; /* Inicialmente escondido */
+    z-index: 100; 
+    display: none; 
     text-align: center;
-    border: 2px solid #e50914; /* Borda vermelha estilo Netflix */
+    border: 2px solid #e50914; 
 }
 
-/* Modal que aparece flutuando à direita */
+
 .modal {
     position: fixed;
-    top: 50%; /* Centraliza verticalmente */
-    right: 0; /* Alinha totalmente à direita */
-    transform: translateY(-50%); /* Ajusta verticalmente o centro */
-    width: 300px; /* Tamanho menor */
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semitransparente */
-    border-radius: 10px 0 0 10px; /* Arredondar apenas o lado esquerdo */
+    top: 50%; 
+    right: 0; 
+    transform: translateY(-50%); 
+    width: 300px; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 10px 0 0 10px;  
     padding: 20px;
-    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3); /* Sombra apenas no lado esquerdo */
-    z-index: 100; /* Garantir que ele esteja acima de outros elementos */
-    display: none; /* Inicialmente escondido */
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3); 
+    z-index: 100; 
+    display: none; 
     text-align: center;
-    border: 2px solid #e50914; /* Borda vermelha estilo Netflix */
-    border-right: none; /* Remove a borda do lado direito */
+    border: 2px solid #e50914; 
+    border-right: none; 
 }
 
-/* Estilo do conteúdo do modal */
+
 .modal-content {
     margin: 0;
 }
@@ -72,7 +72,7 @@ body {
 .modal-content h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #fff; /* Texto branco */
+    color: #fff; 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -84,13 +84,13 @@ body {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente no input */
-    color: #fff; /* Texto branco */
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff; 
 }
 
 .modal-content button {
     padding: 10px 20px;
-    background-color: #e50914; /* Cor vermelha padrão */
+    background-color: #e50914; 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -100,10 +100,10 @@ body {
 }
 
 .modal-content button:hover {
-    background-color: #d40813; /* Efeito de hover mais claro */
+    background-color: #d40813; 
 }
 
-/* Animação suave de entrada */
+
 .modal {
     animation: slideInFromRight 0.5s ease-in-out;
 }
@@ -135,7 +135,7 @@ body {
 
 .parallax {
     background-attachment: fixed;
-    filter: brightness(0.3); /* Deixa a imagem mais escura */
+    filter: brightness(0.3); 
     z-index: -1;
     animation: changeBackground 30s infinite;
 }
@@ -146,7 +146,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Aumenta a opacidade para um contraste maior */
+    background: rgba(0, 0, 0, 0.7); 
     z-index: 1;
 }
 
@@ -162,20 +162,20 @@ body {
 }
 
 h1 {
-    font-size: 5rem; /* Aumenta o título */
+    font-size: 5rem; 
     margin-bottom: 30px;
-    color: #f5f5f5; /* Cor neutra mais clara */
+    color: #f5f5f5; 
     transition: color 0.3s, transform 0.3s;
 }
 
 h1:hover {
-    color: #e50914; /* Cor vermelha ao passar o mouse, similar à Netflix */
+    color: #e50914; 
     transform: scale(1.1);
 }
 
 .menu-container {
     display: flex;
-    flex-direction: column; /* Itens em coluna */
+    flex-direction: column; 
     align-items: center;
     margin-top: 20px;
 }
@@ -191,7 +191,7 @@ h1:hover {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    text-decoration: none; /* Remove o sublinhado */
+    text-decoration: none; 
 }
 
 .menu-item:hover {
@@ -232,3 +232,5 @@ footer {
     font-size: 1.6rem;
     z-index: 2;
 }
+
+

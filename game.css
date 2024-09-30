@@ -1,4 +1,4 @@
-/* Definições globais */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo da tela igual ao box de perguntas */
+    background-color: rgba(0, 0, 0, 0.7); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@ body {
 }
 
 
-/* Organiza os itens em colunas, centralizados */
+
 .quiz-container {
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
@@ -26,13 +26,13 @@ body {
     text-align: center;
     animation: fadeIn 1s ease-in-out;
     display: flex;
-    flex-direction: column; /* Alinhamento em coluna */
+    flex-direction: column; 
     align-items: center;
-    justify-content: space-between; /* Adiciona espaço entre os itens */
-    gap: 20px; /* Espaçamento entre os elementos da coluna */
+    justify-content: space-between; 
+    gap: 20px; 
 }
 
-/* Título centralizado */
+
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -42,12 +42,12 @@ h1 {
     animation: gradientMove 3s infinite alternate;
 }
 
-/* Contêiner de perguntas centralizado */
+
 .question-container {
-    width: 100%; /* Garante que ocupe a largura total do contêiner */
+    width: 100%; 
     margin-bottom: 20px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.2); /* Adiciona um fundo leve para destacar as perguntas */
+    background: rgba(255, 255, 255, 0.2); 
     border-radius: 10px;
     text-align: center;
 }
@@ -55,27 +55,26 @@ h1 {
 .question-container p {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    font-weight: bold; /* Destaca o texto da pergunta */
+    font-weight: bold; 
 }
 
-/* Contêiner de opções */
+
 .options-container {
     display: flex;
-    flex-direction: column; /* Organiza as opções em colunas */
+    flex-direction: column; 
     gap: 10px;
     width: 100%;
 }
 
 .option {
-    background: rgba(0, 0, 0, 0.8); /* Caixa preta ao redor das alternativas */
-    padding: 10px;
+    background: rgba(0, 0, 0, 0.8); /
     border-radius: 10px;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    text-align: left; /* Alinha o texto à esquerda para melhor leitura */
-    width: 100%; /* Garante que as opções ocupem a largura total do contêiner */
-    display: block; /* Certifica-se de que as opções se comportam como blocos e ocupam a largura total */
+    text-align: left; 
+    width: 100%; 
+    display: block; 
 }
 
 .option:hover {
@@ -83,10 +82,10 @@ h1 {
     transform: scale(1.02);
 }
 
-/* Botões em coluna */
+
 .btn-container {
     display: flex;
-    flex-direction: column; /* Organiza os botões em coluna */
+    flex-direction: column; 
     gap: 10px;
     margin-top: 20px;
     width: 100%;
@@ -108,7 +107,7 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* Botão "próxima" em estilo coluna */
+
 .next-btn {
     background-color: #e52e71;
     color: white;
@@ -136,7 +135,7 @@ h1 {
     transition: opacity 0.5s ease;
 }
 
-/* Animação de fade in */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -148,7 +147,7 @@ h1 {
     }
 }
 
-/* Animação para o texto */
+
 @keyframes gradientMove {
     from {
         background-position: 0%;
@@ -162,7 +161,7 @@ h1 {
     opacity: 1;
 }
 
-/* Adição de algumas definições de layout para garantir organização no jogo */
+
 .container {
     display: flex;
     justify-content: center;
@@ -199,3 +198,4 @@ h1 {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.02);
 }
+

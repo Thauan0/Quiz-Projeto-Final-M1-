@@ -107,16 +107,15 @@ function showQuestion() {
 function resetState() {
     nextButton.style.display = 'none';
     resultElement.innerHTML = '';
-    answerButtonsElement.innerHTML = ''; // Limpa os botões de resposta
-}
+    answerButtonsElement.innerHTML = ''; 
 
 function selectAnswer(answer) {
     let scoreTag = document.getElementById("score")
     Array.from(answerButtonsElement.children).forEach(button => {
-        button.disabled = true; // Desabilita todos os botões de resposta
+        button.disabled = true; 
     });
 
-    // Mostra se a resposta está correta ou errada
+    
     if (answer.correct) {
         score++;
     
@@ -127,7 +126,7 @@ function selectAnswer(answer) {
     }
 
     resultElement.classList.add('show');
-    nextButton.style.display = 'block'; // Mostra o botão "Próxima"
+    nextButton.style.display = 'block'; 
 }
 
 function handleNextButtonClick() {
@@ -148,7 +147,7 @@ function showResult() {
 
     const playerName = localStorage.getItem('playerName') || 'Jogador Desconhecido';
 
-    // Salvar o nome, pontuação e data no localStorage
+    
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
     const currentDate = new Date().toLocaleDateString();
     highScores.push({ name: playerName, score: score, date: currentDate });
@@ -187,4 +186,4 @@ function loadHighScores() {
 window.onload = loadHighScores;
 
 // Inicializa o quiz
-startQuiz();
+startQuiz(); }
