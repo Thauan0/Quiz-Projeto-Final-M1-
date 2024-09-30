@@ -111,6 +111,7 @@ function resetState() {
 }
 
 function selectAnswer(answer) {
+    let scoreTag = document.getElementById("score")
     Array.from(answerButtonsElement.children).forEach(button => {
         button.disabled = true; // Desabilita todos os botões de resposta
     });
@@ -118,6 +119,8 @@ function selectAnswer(answer) {
     // Mostra se a resposta está correta ou errada
     if (answer.correct) {
         score++;
+    
+        scoreTag.innerText = `${score}/${questions.length}`
         resultElement.innerHTML = "Correto!";
     } else {
         resultElement.innerHTML = "Errado!";
