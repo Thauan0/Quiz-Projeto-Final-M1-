@@ -104,6 +104,31 @@ h2{
 
 }
 
+.btn {
+    display: inline-block;
+    padding: 0.8rem 0; /* Reduzi o padding */
+    width: 15rem; /* Reduzi a largura */
+    font-size: 1.6rem; /* Reduzi um pouco o tamanho da fonte */
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparência para combinar com o estilo */
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 150ms;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Adicionando uma borda sutil */
+    position: fixed; /* Fixa o botão na tela */
+    right: 20px; /* Posiciona a 20px da direita */
+    top: 20px; /* Posiciona a 20px do topo */
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.3rem 1rem rgba(229, 9, 20, 0.5); /* Efeito de hover mais suave */
+    transform: translateY(-0.1rem);
+}
+
+
 
 
 

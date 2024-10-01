@@ -8,21 +8,18 @@
     <link rel="stylesheet" href="game.css">
 </head>
 <body>
-    <body>
-        <div class="container"> 
-            <p id="score"></p>
-            <div class="quiz-container"> <!-- Alterado de id="game" para class="quiz-container" -->
-                <h2 id="question">Qual é a resposta para esta pergunta?</h2>
-                <div id="answer-buttons" class="choice-buttons-container">
-                    <!-- Botões de resposta serão inseridos aqui pelo JavaScript -->
-                </div>
-                <button id="next-btn" class="next-btn">Próxima</button>
-                <div id="result" class="result"></div>
+    <div class="container"> 
+        <h1 id="quiz-title">PrimeQuiz!</h1>
+        <p id="score">Placar: 0</p> <!-- Placar estilizado -->
+        <div class="quiz-container">
+            <h2 id="question">Qual é a resposta para esta pergunta?</h2>
+            <div id="answer-buttons" class="choice-buttons-container">
+                <!-- Botões de resposta serão inseridos aqui pelo JavaScript -->
             </div>
+            <button id="next-btn" class="next-btn">Próxima</button>
+            <div id="result" class="result"></div>
         </div>
-        <script src="/game.js"></script>
-    </body>
-    
+    </div>
     <script src="/game.js"></script>
 </body>
 </html>

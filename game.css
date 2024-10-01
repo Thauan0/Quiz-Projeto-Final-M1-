@@ -199,3 +199,31 @@ h1 {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.02);
 }
+
+/* Adicionando estilo ao título principal */
+#quiz-title {
+    font-size: 5.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, red, red); /* Gradiente para combinar com o estilo dos botões */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centraliza o título */
+    animation: gradientMove 3s infinite alternate; /* Animação de gradiente */
+    padding: 10px 0; /* Espaçamento interno */
+}
+
+/* Estilo para o placar (score) */
+#score {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
+    color: red; /* Cor amarela dourada para destacar o placar */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda leve e discreta */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    font-size: 1.5rem; /* Tamanho da fonte maior para dar destaque */
+    font-weight: bold; /* Destaca o texto do placar */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento em relação ao restante do conteúdo */
+    width: fit-content; /* Garante que o placar se ajuste ao tamanho do conteúdo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra para dar efeito de profundidade */
+    animation: fadeIn 1s ease-in-out; /* Suave animação ao aparecer */
+}

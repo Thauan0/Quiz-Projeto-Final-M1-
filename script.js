@@ -1,30 +1,33 @@
-
-
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
 const resultElement = document.getElementById('result');
 const backgroundElement = document.querySelector('.background');
 const imagens = [  
-        "url('./img/Princess.jfif')",    
-        "url('./img/HOUSE.jpg')", 
-        "url('./img/Friends.jfif')",
-        "url('./img/Efeito.jfif')",
-        "url('./img/Breakingbad.jfif')",
-        "url('./img/GOT2.jpeg')",
-        "url('./img/Ramona.jfif')",
-]
+    "url('./img/Princess.jfif')",    
+    "url('./img/HOUSE.jpg')", 
+    "url('./img/Friends.jfif')",
+    "url('./img/Efeito.jfif')",
+    "url('./img/Breakingbad.jfif')",
+    "url('./img/GOT2.jpeg')",
+    "url('./img/Ramona.jfif')",
+];
 
 let indiceatual = 0;
-function trocadetela(){
-        indiceatual = (indiceatual+1) % imagens.length;
-        document.body.style.backgroundImage = imagens[indiceatual];
-        
+
+function trocadetela() {
+    let numTrocas = 0; // Contador para o número de trocas
+    const limiteTrocas = 5; // Limite de trocas desejadas
+
+    while (numTrocas < limiteTrocas) { // Loop enquanto o número de trocas for menor que o limite
+        indiceatual = (indiceatual + 1) % imagens.length; // Atualiza o índice da imagem
+        document.body.style.backgroundImage = imagens[indiceatual]; // Aplica a nova imagem de fundo
+        numTrocas++; // Incrementa o contador de trocas
+    }
 }
 
-setInterval (trocadetela, 3000);
-
-
+// Executa a troca de imagem continuamente a cada 3 segundos
+setInterval(trocadetela, 2000);
 
 // Pega os elementos do modal e do botão
 const playGameButton = document.getElementById('play-game');
@@ -50,5 +53,43 @@ startGameButton.addEventListener('click', function() {
     } else {
         alert('Por favor, insira um nome para começar o jogo.');
     }
-});
+});// Função para selecionar a dificuldade do quiz
+function selecionarDificuldade() {
+    const dificuldades = ['Fácil', 'Médio', 'Difícil'];
+    let dificuldadeSelecionada = '';
 
+    // Loop para garantir que uma opção válida seja escolhida
+    while (!dificuldadeSelecionada) {
+        const resposta = prompt(`Escolha a dificuldade do quiz:\n1. Fácil\n2. Médio\n3. Difícil\nDigite o número correspondente:`);
+        
+        // Se o usuário fechar o prompt
+        if (resposta === null) {
+            alert("Você fechou o prompt. O site será recarregado.");
+            location.reload(); // Recarrega a página
+            return;
+        }
+
+        // Verifica a resposta e define a dificuldade
+        switch (resposta) {
+            case '1':
+                dificuldadeSelecionada = dificuldades[0];
+                break;
+            case '2':
+                dificuldadeSelecionada = dificuldades[1];
+                break;
+            case '3':
+                dificuldadeSelecionada = dificuldades[2];
+                break;
+            default:
+                alert('Por favor, selecione uma opção válida (1, 2 ou 3).');
+        }
+    }
+
+    // Retorna a dificuldade selecionada
+    alert(`Você selecionou a dificuldade: ${dificuldadeSelecionada}`);
+    return dificuldadeSelecionada;
+}
+
+window.onload = function() {
+    const dificuldadeDoQuiz = selecionarDificuldade();
+};
