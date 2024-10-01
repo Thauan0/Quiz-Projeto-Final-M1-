@@ -77,6 +77,8 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
 const resultElement = document.getElementById('result');
+const muteButton = document.getElementById('muteButton');
+const music = document.getElementById('background-music');
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -87,6 +89,7 @@ function startQuiz() {
     nextButton.innerHTML = "Próxima";
     nextButton.removeEventListener('click', startQuiz);
     nextButton.addEventListener('click', handleNextButtonClick);
+    music.play(); // Inicia a música quando o quiz começa
     showQuestion();
 }
 
@@ -135,6 +138,7 @@ function handleNextButtonClick() {
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
+        music.pause(); // Pausa a música ao fim do quiz
         showResult();
     }
 }
@@ -185,6 +189,17 @@ function loadHighScores() {
 
 // Carregar as pontuações quando a página for carregada
 window.onload = loadHighScores;
+
+//Função para alternar entre mutar e desmutar a música
+// muteButton.addEventListener('click', () => {
+//     if (music.muted) {
+//         music.muted = false;
+//         muteButton.innerText = "Mute";
+//     } else {
+//         music.muted = true;
+//         muteButton.innerText = "Unmute";
+//     }
+// }); 
 
 // Inicializa o quiz
 startQuiz();

@@ -167,6 +167,18 @@ h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/*.mute-button {
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    background-color:#ff8a00;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-direction: column-reverse;
+}*/
+
 .choice-buttons-container {
     display: flex;
     flex-direction: column;
