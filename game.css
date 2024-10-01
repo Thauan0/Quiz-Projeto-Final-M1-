@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +14,6 @@ body {
     color: white;
 }
 
-
-
 .quiz-container {
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
@@ -32,7 +29,6 @@ body {
     gap: 20px; 
 }
 
-
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -41,7 +37,6 @@ h1 {
     -webkit-text-fill-color: transparent;
     animation: gradientMove 3s infinite alternate;
 }
-
 
 .question-container {
     width: 100%; 
@@ -58,7 +53,6 @@ h1 {
     font-weight: bold; 
 }
 
-
 .options-container {
     display: flex;
     flex-direction: column; 
@@ -67,7 +61,7 @@ h1 {
 }
 
 .option {
-    background: rgba(0, 0, 0, 0.8); /
+    background: rgba(0, 0, 0, 0.8); 
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -81,7 +75,6 @@ h1 {
     background: #333;
     transform: scale(1.02);
 }
-
 
 .btn-container {
     display: flex;
@@ -106,7 +99,6 @@ h1 {
     background-color: #e52e71;
     transform: translateY(-3px);
 }
-
 
 .next-btn {
     background-color: #e52e71;
@@ -135,7 +127,6 @@ h1 {
     transition: opacity 0.5s ease;
 }
 
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -146,7 +137,6 @@ h1 {
         transform: translateY(0);
     }
 }
-
 
 @keyframes gradientMove {
     from {
@@ -160,7 +150,6 @@ h1 {
 .result.show {
     opacity: 1;
 }
-
 
 .container {
     display: flex;
@@ -199,33 +188,30 @@ h1 {
     transform: scale(1.02);
 }
 
-<<<<<<< HEAD
-/* Adicionando estilo ao título principal */
+/* Estilo ao título principal */
 #quiz-title {
     font-size: 5.5rem;
     margin-bottom: 30px;
-    background: linear-gradient(90deg, red, red); /* Gradiente para combinar com o estilo dos botões */
+    background: linear-gradient(90deg, red, red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center; /* Centraliza o título */
-    animation: gradientMove 3s infinite alternate; /* Animação de gradiente */
-    padding: 10px 0; /* Espaçamento interno */
+    text-align: center; 
+    animation: gradientMove 3s infinite alternate; 
+    padding: 10px 0;
 }
 
 /* Estilo para o placar (score) */
 #score {
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
-    color: red; /* Cor amarela dourada para destacar o placar */
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda leve e discreta */
-    padding: 10px 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Cantos arredondados */
-    font-size: 1.5rem; /* Tamanho da fonte maior para dar destaque */
-    font-weight: bold; /* Destaca o texto do placar */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Espaçamento em relação ao restante do conteúdo */
-    width: fit-content; /* Garante que o placar se ajuste ao tamanho do conteúdo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra para dar efeito de profundidade */
-    animation: fadeIn 1s ease-in-out; /* Suave animação ao aparecer */
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: red;
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    width: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    animation: fadeIn 1s ease-in-out;
 }
-=======
->>>>>>> c76a3ec052a9decd09300b555949671a6ee75442
