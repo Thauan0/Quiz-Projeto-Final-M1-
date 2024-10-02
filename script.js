@@ -1,3 +1,4 @@
+
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
@@ -36,18 +37,18 @@ const startGameButton = document.getElementById('start-game');
 const playerNameInput = document.getElementById('player-name');
 
 // Mostra o modal quando o botão de jogar for clicado
-playGameButton.addEventListener('click', function (event) {
+playGameButton.addEventListener('click', function(event) {
     event.preventDefault(); // Impede a navegação
     nameModal.style.display = 'block'; // Exibe o modal
 });
 
 // Inicia o jogo quando o nome for inserido e o botão for clicado
-startGameButton.addEventListener('click', function () {
+startGameButton.addEventListener('click', function() {
     const playerName = playerNameInput.value;
     if (playerName) {
         // Salva o nome do jogador no localStorage ou sessionStorage para usar em outras páginas
         sessionStorage.setItem('playerName', playerName);
-
+        
         // Redireciona para a página game.html
         window.location.href = 'game.html';
     } else {
@@ -58,7 +59,7 @@ startGameButton.addEventListener('click', function () {
 // Função para perguntar a série favorita do usuário
 function selecionarSerieFavorita() {
     const resposta = prompt("Qual a sua série favorita?");
-
+    
     // Se o usuário fechar o prompt
     if (resposta === null) {
         alert("Você fechou o prompt. O site será recarregado.");
@@ -74,10 +75,10 @@ function selecionarSerieFavorita() {
 
     // Salva a série favorita no localStorage ou sessionStorage
     sessionStorage.setItem('favoriteShow', resposta);
-    alert(Sua série favorita é: ${ resposta });
+    alert(`Sua série favorita é: ${resposta}`);
 }
 
 // Executa ao carregar a página
-window.onload = function () {
+window.onload = function() {
     selecionarSerieFavorita(); // Pergunta a série favorita
 };
