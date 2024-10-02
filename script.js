@@ -3,9 +3,9 @@ const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
 const resultElement = document.getElementById('result');
 const backgroundElement = document.querySelector('.background');
-const imagens = [  
-    "url('./img/Princess.jfif')",    
-    "url('./img/HOUSE.jpg')", 
+const imagens = [
+    "url('./img/Princess.jfif')",
+    "url('./img/HOUSE.jpg')",
     "url('./img/Friends.jfif')",
     "url('./img/Efeito.jfif')",
     "url('./img/Breakingbad.jfif')",
@@ -36,60 +36,48 @@ const startGameButton = document.getElementById('start-game');
 const playerNameInput = document.getElementById('player-name');
 
 // Mostra o modal quando o botão de jogar for clicado
-playGameButton.addEventListener('click', function(event) {
+playGameButton.addEventListener('click', function (event) {
     event.preventDefault(); // Impede a navegação
     nameModal.style.display = 'block'; // Exibe o modal
 });
 
 // Inicia o jogo quando o nome for inserido e o botão for clicado
-startGameButton.addEventListener('click', function() {
+startGameButton.addEventListener('click', function () {
     const playerName = playerNameInput.value;
     if (playerName) {
         // Salva o nome do jogador no localStorage ou sessionStorage para usar em outras páginas
         sessionStorage.setItem('playerName', playerName);
-        
+
         // Redireciona para a página game.html
         window.location.href = 'game.html';
     } else {
         alert('Por favor, insira um nome para começar o jogo.');
     }
-});// Função para selecionar a dificuldade do quiz
-function selecionarDificuldade() {
-    const dificuldades = ['Fácil', 'Médio', 'Difícil'];
-    let dificuldadeSelecionada = '';
+});
 
-    // Loop para garantir que uma opção válida seja escolhida
-    while (!dificuldadeSelecionada) {
-        const resposta = prompt(`Escolha a dificuldade do quiz:\n1. Fácil\n2. Médio\n3. Difícil\nDigite o número correspondente:`);
-        
-        // Se o usuário fechar o prompt
-        if (resposta === null) {
-            alert("Você fechou o prompt. O site será recarregado.");
-            location.reload(); // Recarrega a página
-            return;
-        }
+// Função para perguntar a série favorita do usuário
+function selecionarSerieFavorita() {
+    const resposta = prompt("Qual a sua série favorita?");
 
-        // Verifica a resposta e define a dificuldade
-        switch (resposta) {
-            case '1':
-                dificuldadeSelecionada = dificuldades[0];
-                break;
-            case '2':
-                dificuldadeSelecionada = dificuldades[1];
-                break;
-            case '3':
-                dificuldadeSelecionada = dificuldades[2];
-                break;
-            default:
-                alert('Por favor, selecione uma opção válida (1, 2 ou 3).');
-        }
+    // Se o usuário fechar o prompt
+    if (resposta === null) {
+        alert("Você fechou o prompt. O site será recarregado.");
+        location.reload(); // Recarrega a página
+        return;
     }
 
-    // Retorna a dificuldade selecionada
-    alert(`Você selecionou a dificuldade: ${dificuldadeSelecionada}`);
-    return dificuldadeSelecionada;
+    // Validação da resposta
+    if (resposta.trim() === '') {
+        alert('Por favor, digite sua série favorita!');
+        return selecionarSerieFavorita(); // Repete a pergunta se não houver resposta
+    }
+
+    // Salva a série favorita no localStorage ou sessionStorage
+    sessionStorage.setItem('favoriteShow', resposta);
+    alert(Sua série favorita é: ${ resposta });
 }
 
-window.onload = function() {
-    const dificuldadeDoQuiz = selecionarDificuldade();
+// Executa ao carregar a página
+window.onload = function () {
+    selecionarSerieFavorita(); // Pergunta a série favorita
 };
