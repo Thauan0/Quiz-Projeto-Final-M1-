@@ -200,7 +200,6 @@ h1 {
     transform: scale(1.02);
 }
 
-/* Estilo ao título principal */
 #quiz-title {
     font-size: 5.5rem;
     margin-bottom: 30px;
@@ -212,7 +211,6 @@ h1 {
     padding: 10px 0;
 }
 
-/* Estilo para o placar (score) */
 #score {
     background-color: rgba(0, 0, 0, 0.8); 
     color: red;
