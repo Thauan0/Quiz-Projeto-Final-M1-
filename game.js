@@ -77,8 +77,10 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
 const resultElement = document.getElementById('result');
-const muteButton = document.getElementById('muteButton');
-const music = document.getElementById('background-music');
+const audioEl = document.querySelector('#som');
+const botaoMusica = document.querySelector('#musica');
+const musicIcon = document.querySelector("#musica img");
+localStorage.setItem('muteOuUnmute', musicIcon.id);
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -89,7 +91,7 @@ function startQuiz() {
     nextButton.innerHTML = "Próxima";
     nextButton.removeEventListener('click', startQuiz);
     nextButton.addEventListener('click', handleNextButtonClick);
-    music.play(); // Inicia a música quando o quiz começa
+    
     showQuestion();
 }
 
@@ -138,7 +140,6 @@ function handleNextButtonClick() {
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
-        music.pause(); // Pausa a música ao fim do quiz
         showResult();
     }
 }
@@ -190,16 +191,23 @@ function loadHighScores() {
 // Carregar as pontuações quando a página for carregada
 window.onload = loadHighScores;
 
-//Função para alternar entre mutar e desmutar a música
-// muteButton.addEventListener('click', () => {
-//     if (music.muted) {
-//         music.muted = false;
-//         muteButton.innerText = "Mute";
-//     } else {
-//         music.muted = true;
-//         muteButton.innerText = "Unmute";
-//     }
-// }); 
+function toggleMute() {
+
+    if (localStorage.getItem("muteOuUnmute") === "mutado"){
+        audioEl.pause();
+        musicIcon.src = "/img/mute.png";
+        musicIcon.id = "";
+        localStorage.setItem('muteOuUnmute', musicIcon.id);
+    }
+    else {
+        audioEl.play();
+        musicIcon.src = "/img/som.png";
+        musicIcon.id = "mutado";
+        localStorage.setItem('muteOuUnmute', musicIcon.id);
+    }
+}
+botaoMusica.addEventListener('click', toggleMute);
+ 
 
 // Inicializa o quiz
 startQuiz();
